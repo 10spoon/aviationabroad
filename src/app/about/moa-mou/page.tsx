@@ -1,9 +1,7 @@
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-export const metadata = {
-  title: "MOA·MOU | 항공유학 인사이트엣지",
-};
+export const metadata = { title: "MOA·MOU | 항공유학 인사이트엣지" };
 
 const agreements = [
   {
@@ -27,52 +25,30 @@ const agreements = [
 export default function MoaMouPage() {
   return (
     <>
-      <PageHero
-        label="(주)인사이트엣지"
-        title="MOA · MOU"
-        description="인사이트엣지의 글로벌 파트너십 협정 현황입니다."
-      />
+      <PageHero label="(주)인사이트엣지" title="MOA · MOU" description="인사이트엣지의 글로벌 파트너십 협정 현황입니다." />
 
-      <section className="py-12 px-4 sm:px-6">
+      <section className="py-12 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto space-y-6">
           {agreements.map((ag) => (
-            <div
-              key={ag.partner}
-              className="rounded-2xl bg-navy-800/50 border border-border-navy p-6 md:p-8 hover:border-sky-accent/20 transition-colors"
-            >
+            <div key={ag.partner} className="rounded-2xl bg-white border border-slate-200 p-6 md:p-8 shadow-sm hover:border-sky-200 transition-colors">
               <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="px-2.5 py-0.5 bg-sky-accent/10 border border-sky-accent/20 text-sky-accent text-xs font-bold rounded-md">
-                      {ag.type}
-                    </span>
-                    <span className="text-text-muted text-sm">{ag.year}년 체결</span>
+                    <span className="px-2.5 py-0.5 bg-sky-50 border border-sky-200 text-sky-700 text-xs font-bold rounded-md">{ag.type}</span>
+                    <span className="text-slate-400 text-sm">{ag.year}년 체결</span>
                   </div>
-                  <h3 className="text-text-primary font-bold text-xl">{ag.partner}</h3>
-                  <p className="text-text-muted text-sm mt-1">{ag.location}</p>
+                  <h3 className="text-slate-900 font-bold text-xl">{ag.partner}</h3>
+                  <p className="text-slate-400 text-sm mt-1">{ag.location}</p>
                 </div>
               </div>
-
-              <p className="text-text-secondary text-sm leading-relaxed mb-5">{ag.desc}</p>
-
+              <p className="text-slate-600 text-sm leading-relaxed mb-5">{ag.desc}</p>
               <div className="flex flex-wrap gap-2">
                 {ag.highlights.map((h) => (
-                  <span
-                    key={h}
-                    className="px-3 py-1.5 bg-navy-700 border border-border-navy text-text-muted text-xs rounded-lg"
-                  >
-                    {h}
-                  </span>
+                  <span key={h} className="px-3 py-1.5 bg-slate-50 border border-slate-200 text-slate-500 text-xs rounded-lg">{h}</span>
                 ))}
               </div>
             </div>
           ))}
-
-          <div className="rounded-xl bg-navy-800/30 border border-border-navy p-5 text-center">
-            <p className="text-text-muted text-sm">
-              파트너십 관련 문의는 아래 연락처로 상담해 주세요.
-            </p>
-          </div>
         </div>
       </section>
 
