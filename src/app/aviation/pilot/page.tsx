@@ -16,43 +16,41 @@ export default function PilotPage() {
     <>
       <PageHero label="항공유학" title="조종사 유학" description="필리핀 해외 항공대학교를 통한 조종사 자격증 취득 프로그램" />
 
-      <section className="py-12 px-4 sm:px-6 bg-white">
-        <div className="max-w-4xl mx-auto space-y-10">
+      <section className="py-16 px-4 sm:px-6 bg-white">
+        <div className="max-w-4xl mx-auto space-y-8">
 
           <div>
-            <h2 className="text-slate-900 font-bold text-xl mb-2">조종사가 되는 방법</h2>
+            <h2 className="text-slate-900 font-semibold text-xl tracking-tight mb-2">조종사가 되는 방법</h2>
             <p className="text-slate-400 text-sm mb-5">항공기를 직접 조종하는 항공업무종사자(자가용·사업용·운송용)가 되기 위한 다양한 경로입니다.</p>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {routes.map((route) => (
-                <div key={route.num} className={`flex items-center gap-4 rounded-xl px-5 py-4 border transition-colors ${route.highlight ? "bg-sky-50 border-sky-200" : "bg-white border-slate-200 hover:border-sky-200 shadow-sm"}`}>
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 ${route.highlight ? "bg-sky-600 text-white" : "bg-slate-100 text-slate-500"}`}>
+                <div key={route.num} className={`group flex items-center gap-4 rounded-xl px-5 py-4 border transition-all duration-300 ${route.highlight ? "bg-sky-50 border-sky-200" : "bg-white border-slate-900/[0.08] hover:border-sky-200 shadow-sm hover:shadow-md"}`}>
+                  <div className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 ${route.highlight ? "bg-sky-600 text-white" : "bg-slate-100 text-slate-500 group-hover:bg-sky-50 group-hover:text-sky-600 transition-colors duration-300"}`}>
                     {route.num}
                   </div>
                   <div>
                     <div className={`font-medium text-sm ${route.highlight ? "text-sky-700" : "text-slate-900"}`}>{route.title}</div>
                     <div className="text-slate-400 text-xs mt-0.5">{route.desc}</div>
                   </div>
-                  {route.highlight && (
-                    <span className="ml-auto text-xs text-sky-600 border border-sky-300 rounded-md px-2 py-0.5 shrink-0">추천</span>
-                  )}
+                  {route.highlight && <span className="ml-auto text-xs text-sky-600 border border-sky-300 rounded-md px-2 py-0.5 shrink-0">추천</span>}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="rounded-2xl bg-white border border-slate-200 p-6 md:p-8 shadow-sm">
-            <h2 className="text-slate-900 font-bold text-xl mb-5">필리핀 조종사 유학 과정</h2>
-            <div className="grid sm:grid-cols-2 gap-4 mb-6">
-              <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
-                <div className="text-sky-600 text-xs font-bold mb-2">대졸자 과정</div>
-                <div className="text-slate-900 font-bold text-sm mb-1">14개월 / 300시간</div>
-                <div className="text-slate-500 text-xs leading-relaxed">4년제 대학 졸업자 대상. 14개월 내 300시간 비행 훈련 이수.</div>
-              </div>
-              <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
-                <div className="text-sky-600 text-xs font-bold mb-2">고졸자 과정</div>
-                <div className="text-slate-900 font-bold text-sm mb-1">2년 / 300시간</div>
-                <div className="text-slate-500 text-xs leading-relaxed">고등학교 졸업자 대상. 2년 내 300시간 비행 훈련 이수.</div>
-              </div>
+          <div className="rounded-2xl bg-white border border-slate-900/[0.08] shadow-sm p-6 md:p-8">
+            <h2 className="text-slate-900 font-semibold text-xl tracking-tight mb-5">필리핀 조종사 유학 과정</h2>
+            <div className="grid sm:grid-cols-2 gap-4 mb-5">
+              {[
+                { tag: "대졸자 과정", value: "14개월 / 300시간", desc: "4년제 대학 졸업자 대상. 14개월 내 300시간 비행 훈련 이수." },
+                { tag: "고졸자 과정", value: "2년 / 300시간", desc: "고등학교 졸업자 대상. 2년 내 300시간 비행 훈련 이수." },
+              ].map((item) => (
+                <div key={item.tag} className="rounded-xl bg-slate-50 border border-slate-900/[0.06] p-4">
+                  <div className="text-sky-600 text-xs font-bold mb-1">{item.tag}</div>
+                  <div className="text-slate-900 font-semibold text-sm mb-1">{item.value}</div>
+                  <div className="text-slate-500 text-xs leading-relaxed">{item.desc}</div>
+                </div>
+              ))}
             </div>
             <div className="rounded-xl bg-sky-50 border border-sky-200 p-4">
               <div className="text-slate-700 text-xs font-medium mb-1">교관 추가 경험</div>
@@ -60,8 +58,8 @@ export default function PilotPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-white border border-slate-200 p-6 md:p-8 shadow-sm">
-            <h2 className="text-slate-900 font-bold text-xl mb-5">입학 조건</h2>
+          <div className="rounded-2xl bg-white border border-slate-900/[0.08] shadow-sm p-6 md:p-8">
+            <h2 className="text-slate-900 font-semibold text-xl tracking-tight mb-5">입학 조건</h2>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { label: "학력", value: "고등학교 졸업 이상" },
@@ -71,7 +69,7 @@ export default function PilotPage() {
                 { label: "연령", value: "제한 없음 (35세 이하 권장)" },
                 { label: "시력", value: "교정시력 기준 충족 필요" },
               ].map((item) => (
-                <div key={item.label} className="flex justify-between items-center rounded-lg bg-slate-50 border border-slate-200 px-4 py-3">
+                <div key={item.label} className="flex justify-between items-center rounded-lg bg-slate-50 border border-slate-900/[0.06] px-4 py-3">
                   <span className="text-slate-400 text-xs">{item.label}</span>
                   <span className="text-slate-900 text-xs font-medium">{item.value}</span>
                 </div>
@@ -80,14 +78,14 @@ export default function PilotPage() {
           </div>
 
           <div>
-            <h2 className="text-slate-900 font-bold text-xl mb-5">협력 교육기관</h2>
+            <h2 className="text-slate-900 font-semibold text-xl tracking-tight mb-5">협력 교육기관</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { name: "Alpha Aviation Group", desc: "필리핀 최대 규모의 조종사 양성 학교. CAAP 인증 전문 교육기관." },
                 { name: "Omni Aviation", desc: "필리핀 클락 소재. 다양한 비행 훈련 과정 운영." },
               ].map((p) => (
-                <div key={p.name} className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm hover:border-sky-200 transition-colors">
-                  <h3 className="text-slate-900 font-bold text-sm mb-2">{p.name}</h3>
+                <div key={p.name} className="group rounded-2xl bg-white border border-slate-900/[0.08] shadow-sm p-5 hover:shadow-md hover:border-sky-200 transition-all duration-300">
+                  <h3 className="text-slate-900 font-semibold text-sm tracking-tight mb-2">{p.name}</h3>
                   <p className="text-slate-500 text-xs leading-relaxed">{p.desc}</p>
                 </div>
               ))}

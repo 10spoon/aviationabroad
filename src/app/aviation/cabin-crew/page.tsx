@@ -22,24 +22,23 @@ export default function CabinCrewPage() {
     <>
       <PageHero label="항공유학" title="승무원 유학" description="글로벌 항공사 취업을 목표로 한 영어 집중 승무원 양성 프로그램" />
 
-      <section className="py-12 px-4 sm:px-6 bg-white">
-        <div className="max-w-4xl mx-auto space-y-10">
+      <section className="py-16 px-4 sm:px-6 bg-white">
+        <div className="max-w-4xl mx-auto space-y-8">
 
-          <div className="rounded-2xl bg-white border border-slate-200 p-6 md:p-8 shadow-sm">
-            <h2 className="text-slate-900 font-bold text-xl mb-4">객실 승무원이란?</h2>
+          <div className="rounded-2xl bg-white border border-slate-900/[0.08] shadow-sm p-6 md:p-8">
+            <h2 className="text-slate-900 font-semibold text-xl tracking-tight mb-4">객실 승무원이란?</h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              객실 승무원(Cabin Crew)은 항공기 운항 중 객실 내 안전 관리 및 고객 서비스를 담당하는 항공업무종사자입니다.
-              안전 절차 숙지, 비상 상황 대응, 기내 서비스 제공이 주요 업무이며, 국제선 운항 시 외국어 능력이 매우 중요합니다.
+              객실 승무원(Cabin Crew)은 항공기 운항 중 객실 내 안전 관리 및 고객 서비스를 담당하는 항공업무종사자입니다. 안전 절차 숙지, 비상 상황 대응, 기내 서비스 제공이 주요 업무이며, 국제선 운항 시 외국어 능력이 매우 중요합니다.
             </p>
           </div>
 
           <div>
-            <h2 className="text-slate-900 font-bold text-xl mb-5">직급 체계</h2>
-            <div className="space-y-3">
+            <h2 className="text-slate-900 font-semibold text-xl tracking-tight mb-5">직급 체계</h2>
+            <div className="space-y-2">
               {grades.map((grade, i) => (
-                <div key={grade.code} className="flex items-center gap-4 rounded-xl bg-white border border-slate-200 px-5 py-4 shadow-sm hover:border-sky-200 transition-colors">
-                  <div className="w-8 h-8 rounded-lg bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-700 text-xs font-bold shrink-0">{i + 1}</div>
-                  <div className="w-12 shrink-0"><span className="text-sky-600 font-bold text-xs">{grade.code}</span></div>
+                <div key={grade.code} className="group flex items-center gap-4 rounded-xl bg-white border border-slate-900/[0.08] shadow-sm px-5 py-4 hover:border-sky-200 hover:shadow-md transition-all duration-300">
+                  <div className="w-7 h-7 rounded-lg bg-sky-50 group-hover:bg-sky-100 flex items-center justify-center text-sky-700 text-xs font-bold shrink-0 transition-colors duration-300">{i + 1}</div>
+                  <div className="w-10 shrink-0"><span className="text-sky-600 font-bold text-xs">{grade.code}</span></div>
                   <div className="flex-1">
                     <span className="text-slate-900 font-medium text-sm">{grade.name}</span>
                     <span className="text-slate-400 text-xs ml-2">— {grade.desc}</span>
@@ -50,22 +49,22 @@ export default function CabinCrewPage() {
           </div>
 
           <div>
-            <h2 className="text-slate-900 font-bold text-xl mb-2">Jocson College 교육 프로그램</h2>
+            <h2 className="text-slate-900 font-semibold text-xl tracking-tight mb-2">Jocson College 교육 프로그램</h2>
             <p className="text-slate-400 text-sm mb-5">필리핀 클락의 영어 몰입 환경에서 항공사 면접에 특화된 교육을 받습니다.</p>
             <div className="grid md:grid-cols-3 gap-4">
               {programs.map((prog) => (
-                <div key={prog.name} className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm hover:border-sky-200 hover:shadow-md transition-all">
+                <div key={prog.name} className="group rounded-2xl bg-white border border-slate-900/[0.08] shadow-sm p-5 hover:shadow-md hover:border-sky-200 transition-all duration-300">
                   <div className="text-sky-600 text-xs font-medium mb-1">{prog.full}</div>
-                  <h3 className="text-slate-900 font-bold text-sm mb-3">{prog.name}</h3>
+                  <h3 className="text-slate-900 font-semibold text-sm tracking-tight mb-3">{prog.name}</h3>
                   <p className="text-slate-500 text-xs leading-relaxed">{prog.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="rounded-2xl bg-sky-50 border border-sky-200 p-6 md:p-8">
-            <h2 className="text-slate-900 font-bold text-xl mb-5">교육 특징</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+          <div className="rounded-2xl bg-slate-50 border border-slate-900/[0.06] p-6 md:p-8">
+            <h2 className="text-slate-900 font-semibold text-xl tracking-tight mb-5">교육 특징</h2>
+            <div className="grid sm:grid-cols-2 gap-5">
               {[
                 { icon: "🕗", title: "하루 최대 10시간 영어 수업", desc: "아침 7시부터 체계적 스케줄" },
                 { icon: "👤", title: "1:1 집중 수업", desc: "파워스피킹 7시간 1:1 트레이닝" },
